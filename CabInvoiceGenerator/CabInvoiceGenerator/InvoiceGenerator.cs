@@ -7,7 +7,7 @@ namespace CabInvoiceGenerator
     {
         //Variable.
         RideType rideType;
-        private RideRepository rideRepository;
+        public RideRepository rideRepository;
         //Constants.
         private readonly double MINIMUM_COST_PER_KM;
         private readonly int COST_PER_TIME;
@@ -48,7 +48,7 @@ namespace CabInvoiceGenerator
             double totalFare = 0;
             try
             {
-                ///Calculsting Total Fare.
+                //Calculsting Total Fare.
                 totalFare = distance * MINIMUM_COST_PER_KM + time * COST_PER_TIME;
             }
             catch (CabInvoiceException)
@@ -74,7 +74,7 @@ namespace CabInvoiceGenerator
             double totalFare = 0;
             try
             {
-                ///Calculating Total Fare For All Rides.
+                //Calculating Total Fare For All Rides.
                 foreach (Ride ride in rides)
                 {
                     totalFare += this.CalculateFare(ride.distance, ride.time);
