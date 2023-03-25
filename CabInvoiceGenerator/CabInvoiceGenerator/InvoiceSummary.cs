@@ -6,11 +6,11 @@ namespace CabInvoiceGenerator
 {
     public class InvoiceSummary
     {
-        // Variables.
+        // Variables
         public int numberOfRides;
         public double totalFare;
         public double averageFare;
-        /// Parameter Constructor For Setting Data.
+        /// Parameter Constructor For Setting Data
         public InvoiceSummary(int numberOfRides, double totalFare)
         {
             this.numberOfRides = numberOfRides;
@@ -23,7 +23,7 @@ namespace CabInvoiceGenerator
             this.totalFare = totalFare;
             this.averageFare = this.totalFare / this.numberOfRides;
         }
-        /// Overriding Equals Method.
+        /// Overriding Equals Method
         public override bool Equals(object obj)
         {
             if (obj == null) return false;
@@ -31,7 +31,7 @@ namespace CabInvoiceGenerator
             InvoiceSummary inputedObject = (InvoiceSummary)obj;
             return this.numberOfRides == inputedObject.numberOfRides && this.totalFare == inputedObject.totalFare && this.averageFare == inputedObject.averageFare;
         }
-        /// Overriding GetHashCode Method.
+        /// Overriding GetHashCode Method
         public override int GetHashCode()
         {
             return this.numberOfRides.GetHashCode() ^ this.totalFare.GetHashCode() ^ this.averageFare.GetHashCode();
